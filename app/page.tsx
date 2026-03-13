@@ -5,6 +5,7 @@ import ProductExplanation from "@/components/ProductExplanation";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import HowItWorks from "@/components/HowItWorks";
 import ImpactSection from "@/components/ImpactSection";
+import ChatDemo from "@/components/ChatDemo";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <FeaturesGrid />
       <HowItWorks />
       <ImpactSection />
+      <ChatDemo />
       <CTASection />
       <Footer />
     </main>
