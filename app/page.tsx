@@ -4,7 +4,7 @@ import ProblemSection from "@/components/ProblemSection";
 import ProductExplanation from "@/components/ProductExplanation";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
+import ImpactSection from "@/components/ImpactSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -17,7 +17,7 @@ export default function Home() {
       <ProductExplanation />
       <FeaturesGrid />
       <HowItWorks />
-      <Testimonials />
+      <ImpactSection />
       <CTASection />
       <Footer />
     </main>
