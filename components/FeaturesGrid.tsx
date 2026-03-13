@@ -8,17 +8,20 @@ const features = [
     {
         icon: <MessageSquare size={28} />,
         title: "Omnicanalidad nativa",
-        description: "Conecta la IA con WhatsApp, Instagram, Facebook y Web en un solo lugar. Nunca más dejes un mensaje en visto."
+        description: "Conecta la IA con WhatsApp, Instagram, Facebook y Web en un solo lugar. Nunca más dejes un mensaje en visto.",
+        status: "Live 24/7"
     },
     {
         icon: <CalendarCheck size={28} />,
         title: "Agendamiento Inteligente",
-        description: "El agente consulta en tiempo real tu disponibilidad y reserva las citas sin colisiones en tu software actual."
+        description: "El agente consulta en tiempo real tu disponibilidad y reserva las citas sin colisiones en tu software actual.",
+        status: "Sync"
     },
     {
         icon: <Filter size={28} />,
         title: "Calificación de Leads",
-        description: "Detecta pacientes de alto valor y urgencias, priorizando su atención para maximizar los ingresos de la clínica."
+        description: "Detecta pacientes de alto valor y urgencias, priorizando su atención para maximizar los ingresos de la clínica.",
+        status: "AI Powered"
     },
     {
         icon: <Sparkles size={28} />,
@@ -33,7 +36,8 @@ const features = [
     {
         icon: <Workflow size={28} />,
         title: "Sincronización Total",
-        description: "Integraciones listas con los principales sistemas de gestión de agendas médicas y odontológicas."
+        description: "Integraciones listas con los principales sistemas de gestión de agendas médicas y odontológicas.",
+        status: "Cloud"
     }
 ];
 
@@ -55,13 +59,24 @@ export default function FeaturesGrid() {
                         <motion.div
                             key={index}
                             className={`glass-card ${styles.card}`}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <div className={styles.iconBox}>
-                                {feature.icon}
+                            <div className={styles.cardHeader}>
+                                <motion.div
+                                    className={styles.iconBox}
+                                    whileHover={{ scale: 1.1, rotate: 5 }}
+                                >
+                                    {feature.icon}
+                                </motion.div>
+                                {feature.status && (
+                                    <span className={styles.statusBadge}>
+                                        <span className={styles.statusDot} />
+                                        {feature.status}
+                                    </span>
+                                )}
                             </div>
                             <h3 className="heading-3">{feature.title}</h3>
                             <p className={styles.description}>{feature.description}</p>
