@@ -2,23 +2,28 @@
 
 import { motion } from "framer-motion";
 import styles from "./Problem.module.css";
-import { PhoneOff, CalendarX, TrendingDown } from "lucide-react";
+import { MessageSquareOff, Users, CalendarClock, UserMinus } from "lucide-react";
 
 const problems = [
     {
-        icon: <PhoneOff size={32} />,
+        icon: <MessageSquareOff size={32} strokeWidth={1.5} />,
         title: "Pacientes sin respuesta",
-        description: "El 40% de los leads que contactan fuera del horario comercial nunca reciben respuesta, perdiéndose para siempre."
+        description: "Pacientes que escriben fuera de horario o en momentos de alta demanda no reciben respuesta."
     },
     {
-        icon: <CalendarX size={32} />,
-        title: "Agendas mal gestionadas",
-        description: "Citas canceladas a última hora que no se logran re-agendar, dejando sillones vacíos y perdiendo dinero."
+        icon: <Users size={32} strokeWidth={1.5} />,
+        title: "Recepción saturada",
+        description: "El equipo debe atender pacientes en sala, responder llamadas y revisar mensajes al mismo tiempo."
     },
     {
-        icon: <TrendingDown size={32} />,
-        title: "Pérdida de pacientes inactivos",
-        description: "Pacientes antiguos que no regresan para sus limpiezas o controles porque nadie les hace seguimiento automatizado."
+        icon: <CalendarClock size={32} strokeWidth={1.5} />,
+        title: "Citas sin seguimiento",
+        description: "Cancelaciones y solicitudes pendientes no siempre se retoman a tiempo."
+    },
+    {
+        icon: <UserMinus size={32} strokeWidth={1.5} />,
+        title: "Pacientes inactivos",
+        description: "Pacientes antiguos no vuelven para controles o limpiezas porque no existe seguimiento automatizado."
     }
 ];
 
@@ -27,11 +32,11 @@ export default function ProblemSection() {
         <section className="section-padding" id="problema">
             <div className="container">
                 <div className={styles.header}>
-                    <h2 className="heading-2">
-                        ¿Pierdes oportunidades por <span className="text-gradient">falta de seguimiento?</span>
+                    <h2 className={`heading-2 ${styles.title}`}>
+                        Las clínicas pierden pacientes cuando <span className="text-gradient">no responden a tiempo</span>
                     </h2>
-                    <p className="text-lead">
-                        La gestión manual en las clínicas dentales limita tu crecimiento. Tu equipo no puede estar disponible 24/7 para responder dudas, agendar y confirmar citas.
+                    <p className={`text-lead ${styles.subtitle}`}>
+                        La gestión manual dificulta responder consultas, dar seguimiento a pacientes y recuperar citas perdidas.
                     </p>
                 </div>
 
@@ -39,17 +44,19 @@ export default function ProblemSection() {
                     {problems.map((prob, index) => (
                         <motion.div
                             key={index}
-                            className={`glass-card ${styles.card}`}
-                            initial={{ opacity: 0, y: 20 }}
+                            className={styles.listItem}
+                            initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
                         >
                             <div className={styles.iconWrapper}>
                                 {prob.icon}
                             </div>
-                            <h3 className="heading-3">{prob.title}</h3>
-                            <p className={styles.description}>{prob.description}</p>
+                            <div className={styles.contentWrapper}>
+                                <h3 className={styles.itemTitle}>{prob.title}</h3>
+                                <p className={styles.itemDescription}>{prob.description}</p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
