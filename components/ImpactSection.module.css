@@ -8,6 +8,11 @@
     gap: 1.5rem;
 }
 
+.impactSection {
+    position: relative;
+    overflow: hidden;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -58,11 +63,11 @@
     font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: 800;
     line-height: 1;
-    color: var(--color-primary);
     letter-spacing: -0.04em;
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 2;
+    filter: drop-shadow(0 0 10px rgba(0, 163, 196, 0.1));
 }
 
 .title {
@@ -101,4 +106,17 @@
     padding: 1.25rem 2.5rem;
     font-size: 1.15rem;
     box-shadow: var(--shadow-glow);
+}
+
+.backgroundBlur {
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 163, 196, 0.1) 0%, rgba(0, 163, 196, 0) 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
 }
