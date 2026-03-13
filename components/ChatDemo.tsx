@@ -72,7 +72,7 @@ export default function ChatDemo() {
         const lowInput = input.toLowerCase();
         if (lowInput.includes("limpieza")) return "¡Claro! Tengo disponibilidad para una limpieza dental este jueves a las 15:00 o el viernes a las 10:00. ¿Cuál te queda mejor?";
         if (lowInput.includes("cancelar")) return "Entiendo. He localizado tu cita para mañana a las 11:00. ¿Deseas cancelarla o prefieres reasociarla para la próxima semana?";
-        if (lowInput.includes("ortodoncia")) return "La ortodoncia es una excelente inversión. Para darte un presupuesto exacto necesitemos una evaluación. ¿Te gustaría agendar una cita de valoración gratuita?";
+        if (lowInput.includes("ortodoncia")) return "La ortodoncia es una excelente inversión. Para darte un presupuesto exacto necesitamos una evaluación. ¿Te gustaría agendar una cita de valoración gratuita?";
         return "Entiendo perfectamente. Déjame consultar la agenda de la clínica para darte la mejor opción. ¿Te gustaría dejar tu número para que un especialista te contacte?";
     };
 
@@ -145,7 +145,15 @@ export default function ChatDemo() {
                                         >
                                             <div className={styles.messageBubble}>
                                                 {msg.text}
-                                                <span className={styles.time}>{msg.time}</span>
+                                                <div className={styles.messageMeta}>
+                                                    <span className={styles.time}>{msg.time}</span>
+                                                    {msg.sender === "user" && (
+                                                        <MessageSquareCheck
+                                                            size={14}
+                                                            className={styles.receipt}
+                                                        />
+                                                    )}
+                                                </div>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -189,6 +197,17 @@ export default function ChatDemo() {
                     </div>
                 </div>
             </div>
+
+            {/* Background dynamic depth */}
+            <motion.div
+                className={styles.backgroundBlur}
+                animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.05, 0.08, 0.05],
+                    rotate: [0, 90, 0]
+                }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            />
         </section>
     );
 }
