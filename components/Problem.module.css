@@ -12,6 +12,15 @@
     margin: 0 auto;
     line-height: 1.15;
     font-size: clamp(2.25rem, 4vw, 3.25rem);
+    color: var(--color-primary); /* Dark Blue */
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--color-primary) -20%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
 }
 
 .subtitle {

@@ -17,6 +17,14 @@
     gap: 1.5rem;
 }
 
+.highlight {
+    background: linear-gradient(90deg, var(--color-primary) -20%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
 .list {
     list-style: none;
     display: flex;
@@ -27,10 +35,11 @@
 
 .listItem {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.05rem;
+    align-items: flex-start;
+    gap: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 500;
+    line-height: 1.4;
 }
 
 .checkIcon {
@@ -50,7 +59,14 @@
     max-width: 450px;
     padding: 2.5rem;
     background: white;
-    border-radius: var(--radius-lg);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08); /* elegant shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover transition */
+}
+
+.agentCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12); /* darker shadow on hover */
 }
 
 .agentHeader {

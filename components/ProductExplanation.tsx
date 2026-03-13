@@ -5,10 +5,10 @@ import styles from "./ProductExplanation.module.css";
 import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
-    "Respuestas instantáneas 24/7 en WhatsApp e Instagram.",
-    "Integración profunda con tu software de gestión actual.",
-    "Reactivación proactiva de bases de datos antiguas.",
-    "Agendamiento automático sin intervención humana.",
+    "Responde dudas sobre limpiezas, evaluaciones y tratamientos y más",
+    "Detecta pacientes que quieren agendar una hora",
+    "Gestiona solicitudes de cita automáticamente",
+    "Deriva consultas clínicas al equipo humano",
 ];
 
 export default function ProductExplanation() {
@@ -23,26 +23,26 @@ export default function ProductExplanation() {
                     transition={{ duration: 0.6 }}
                 >
                     {/* Abstract representation of the AI Agent working */}
-                    <div className={`glass-card ${styles.agentCard}`}>
+                    <div className={styles.agentCard}>
                         <div className={styles.agentHeader}>
                             <div className={styles.avatar}>D</div>
                             <div>
-                                <h4 className={styles.agentName}>IA Deviaty</h4>
-                                <p className={styles.agentStatus}>En línea y convirtiendo leads</p>
+                                <h4 className={styles.agentName}>Deviaty AI</h4>
+                                <p className={styles.agentStatus}>En línea y atendiendo pacientes</p>
                             </div>
                         </div>
                         <div className={styles.statsGrid}>
                             <div className={styles.statBox}>
-                                <span className={styles.statValue}>+45%</span>
-                                <span className={styles.statLabel}>Conversión</span>
-                            </div>
-                            <div className={styles.statBox}>
-                                <span className={styles.statValue}>1m</span>
+                                <span className={styles.statValue}>&lt;5s</span>
                                 <span className={styles.statLabel}>Tiempo Rpta.</span>
                             </div>
                             <div className={styles.statBox}>
                                 <span className={styles.statValue}>24/7</span>
                                 <span className={styles.statLabel}>Atención</span>
+                            </div>
+                            <div className={styles.statBox}>
+                                <span className={styles.statValue}>&infin;</span>
+                                <span className={styles.statLabel}>Pacientes</span>
                             </div>
                         </div>
                     </div>
@@ -55,17 +55,20 @@ export default function ProductExplanation() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="heading-2">
-                        La solución definitiva para <span className="text-gradient">la atención al paciente</span>
-                    </h2>
-                    <p className="text-lead">
-                        Nuestros agentes de Inteligencia Artificial están entrenados específicamente para el sector odontológico. Entienden los tratamientos, responden dudas frecuentes y guían al paciente hasta confirmar su cita.
+                    <div>
+                        <span className="eyebrow" style={{ display: "inline-block", marginBottom: "1rem", color: "var(--color-accent)", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>AGENTE IA PARA CLÍNICAS</span>
+                        <h2 className="heading-2">
+                            Automatiza la <span className={styles.highlight}>atención de pacientes</span> en tu clínica
+                        </h2>
+                    </div>
+                    <p className="text-lead" style={{ maxWidth: "600px", color: "var(--color-text-muted)" }}>
+                        Un agente de inteligencia artificial entrenado para responder pacientes, resolver dudas sobre tratamientos y ayudar a gestionar citas en clínicas dentales.
                     </p>
 
                     <ul className={styles.list}>
                         {benefits.map((benefit, index) => (
                             <li key={index} className={styles.listItem}>
-                                <CheckCircle2 className={styles.checkIcon} size={24} />
+                                <CheckCircle2 className={styles.checkIcon} size={28} />
                                 <span>{benefit}</span>
                             </li>
                         ))}
