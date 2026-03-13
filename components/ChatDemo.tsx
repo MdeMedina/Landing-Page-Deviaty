@@ -31,10 +31,15 @@ export default function ChatDemo() {
     const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
     const [inputValue, setInputValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
-    const chatEndRef = useRef<HTMLDivElement>(null);
+    const chatBodyRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
-        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        if (chatBodyRef.current) {
+            chatBodyRef.current.scrollTo({
+                top: chatBodyRef.current.scrollHeight,
+                behavior: "smooth"
+            });
+        }
     };
 
     useEffect(() => {
@@ -101,6 +106,7 @@ export default function ChatDemo() {
                                     {QUICK_ACTIONS.map((action, idx) => (
                                         <button
                                             key={idx}
+                                            type="button"
                                             className={styles.pill}
                                             onClick={() => handleSend(action)}
                                         >
@@ -133,7 +139,7 @@ export default function ChatDemo() {
                             </div>
 
                             {/* Chat Body */}
-                            <div className={styles.chatBody}>
+                            <div className={styles.chatBody} ref={chatBodyRef}>
                                 <AnimatePresence initial={false}>
                                     {messages.map((msg) => (
                                         <motion.div
@@ -171,7 +177,6 @@ export default function ChatDemo() {
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
-                                <div ref={chatEndRef} />
                             </div>
 
                             {/* Chat Input */}
