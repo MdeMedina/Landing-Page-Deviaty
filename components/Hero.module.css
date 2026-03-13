@@ -6,7 +6,7 @@
     padding-top: 5rem;
     /* offset for fixed navbar */
     overflow: hidden;
-    background-color: var(--color-background-alt);
+    background: radial-gradient(circle at 20% 30%, #f0f9ff 0%, var(--color-background-alt) 100%);
 }
 
 .container {
@@ -64,19 +64,23 @@
 .ctaPrimary {
     padding: 1rem 2rem;
     font-size: 1.1rem;
+    box-shadow: var(--shadow-glow);
 }
 
 .ctaSecondary {
     padding: 1rem 2rem;
     font-size: 1.1rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
     border: 1px solid var(--color-border);
     color: var(--color-text);
 }
 
 .ctaSecondary:hover {
+    background: white;
     border-color: var(--color-primary);
     color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
 /* Mockup Chat Visuals */
@@ -87,11 +91,20 @@
 
 .mockupHeader {
     display: flex;
-    gap: 0.5rem;
-    padding: 1rem;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--color-border);
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.mockupTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: auto;
 }
 
 .dot {
@@ -111,23 +124,36 @@
 
 .chatMessage {
     background: white;
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     border-radius: var(--radius-lg);
-    border-bottom-left-radius: 4px;
     max-width: 85%;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     box-shadow: var(--shadow-sm);
     align-self: flex-start;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.agentInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.aiBadge {
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 700;
 }
 
 .chatAgent {
     background: var(--color-primary);
     color: white;
-    border-bottom-left-radius: var(--radius-lg);
-    border-bottom-right-radius: 4px;
     align-self: flex-end;
     border: none;
+    box-shadow: 0 10px 20px rgba(0, 59, 115, 0.15);
 }
 
 .chatSystem {

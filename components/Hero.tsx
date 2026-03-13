@@ -50,25 +50,49 @@ export default function Hero() {
                             <div className={styles.dot} style={{ background: '#ff5f56' }} />
                             <div className={styles.dot} style={{ background: '#ffbd2e' }} />
                             <div className={styles.dot} style={{ background: '#27c93f' }} />
+                            <div className={styles.mockupTitle}>Deviaty Agent v1.0</div>
                         </div>
                         <div className={styles.mockupBody}>
                             <div className={styles.chatMessage}>
                                 <strong>Paciente:</strong> Hola, quiero agendar una limpieza para esta semana.
                             </div>
                             <div className={`${styles.chatMessage} ${styles.chatAgent}`}>
-                                <strong>Agente Deviaty:</strong> ¡Hola! Claro, tengo disponibilidad el Jueves a las 10:00 AM o a las 16:00 PM. ¿Cuál prefieres?
+                                <div className={styles.agentInfo}>
+                                    <strong>Agente Deviaty</strong>
+                                    <span className={styles.aiBadge}>IA</span>
+                                </div>
+                                ¡Hola! Claro, tengo disponibilidad el Jueves a las 10:00 AM o a las 16:00 PM. ¿Cuál prefieres?
                             </div>
                             <div className={styles.chatMessage}>
                                 <strong>Paciente:</strong> El jueves a las 16:00 PM me va perfecto.
                             </div>
                             <div className={`${styles.chatMessage} ${styles.chatSystem}`}>
-                                Cita confirmada en el sistema.
+                                Confirmando con el sistema de la clínica...
                             </div>
+                            <motion.div
+                                className={`${styles.chatMessage} ${styles.chatAgent}`}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1, duration: 0.5 }}
+                            >
+                                ¡Listo! Cita agendada para el Jueves 14 a las 16:00 PM. Te enviamos el recordatorio por WhatsApp.
+                            </motion.div>
                         </div>
                     </div>
                 </motion.div>
             </div>
-            <div className={styles.backgroundBlur} />
+            <motion.div
+                className={styles.backgroundBlur}
+                animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.1, 0.15, 0.1]
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+            />
         </section>
     );
 }
