@@ -33,7 +33,7 @@ export default function ProblemSection() {
             <div className="container">
                 <div className={styles.header}>
                     <h2 className={`heading-2 ${styles.title}`}>
-                        Las clínicas pierden pacientes cuando <span className="text-gradient">no responden a tiempo</span>
+                        Las clínicas pierden pacientes cuando no responden <span className={styles.highlight}>a tiempo</span>
                     </h2>
                     <p className={`text-lead ${styles.subtitle}`}>
                         La gestión manual dificulta responder consultas, dar seguimiento a pacientes y recuperar citas perdidas.
