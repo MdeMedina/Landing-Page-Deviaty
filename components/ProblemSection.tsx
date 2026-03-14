@@ -6,22 +6,22 @@ import { MessageSquareOff, Users, CalendarClock, UserMinus } from "lucide-react"
 
 const problems = [
     {
-        icon: <MessageSquareOff size={32} strokeWidth={1.5} />,
+        icon: <MessageSquareOff size={36} strokeWidth={1.5} />,
         title: "Pacientes sin respuesta",
         description: "Pacientes que escriben fuera de horario o en momentos de alta demanda no reciben respuesta."
     },
     {
-        icon: <Users size={32} strokeWidth={1.5} />,
+        icon: <Users size={36} strokeWidth={1.5} />,
         title: "Recepción saturada",
         description: "El equipo debe atender pacientes en sala, responder llamadas y revisar mensajes al mismo tiempo."
     },
     {
-        icon: <CalendarClock size={32} strokeWidth={1.5} />,
+        icon: <CalendarClock size={36} strokeWidth={1.5} />,
         title: "Citas sin seguimiento",
         description: "Cancelaciones y solicitudes pendientes no siempre se retoman a tiempo."
     },
     {
-        icon: <UserMinus size={32} strokeWidth={1.5} />,
+        icon: <UserMinus size={36} strokeWidth={1.5} />,
         title: "Pacientes inactivos",
         description: "Pacientes antiguos no vuelven para controles o limpiezas porque no existe seguimiento automatizado."
     }

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import styles from "./ProductExplanation.module.css";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Zap, Clock, Infinity as InfinityIcon } from "lucide-react";
 
 const benefits = [
     "Responde dudas sobre limpiezas, evaluaciones y tratamientos y más",
@@ -13,7 +13,7 @@ const benefits = [
 
 export default function ProductExplanation() {
     return (
-        <section className={`section-padding bg-gradient-soft`} id="beneficios">
+        <section className={styles.section} id="beneficios">
             <div className={`container ${styles.container}`}>
                 <motion.div
                     className={styles.visuals}
@@ -22,6 +22,7 @@ export default function ProductExplanation() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                 >
+                    <div className={styles.glow} aria-hidden="true" />
                     {/* Abstract representation of the AI Agent working */}
                     <div className={styles.agentCard}>
                         <div className={styles.agentHeader}>
@@ -31,18 +32,58 @@ export default function ProductExplanation() {
                                 <p className={styles.agentStatus}>En línea y atendiendo pacientes</p>
                             </div>
                         </div>
-                        <div className={styles.statsGrid}>
-                            <div className={styles.statBox}>
-                                <span className={styles.statValue}>&lt;5s</span>
-                                <span className={styles.statLabel}>Tiempo Rpta.</span>
+                        
+                        <div className={styles.agentStatusBlock}>
+                            <h5 className={styles.statusTitle}>Estado del agente</h5>
+                            <div className={styles.statusGrid}>
+                                {[
+                                    "IA activa",
+                                    "Agenda conectada",
+                                    "Derivación a humano habilitada"
+                                ].map((status, i) => (
+                                    <div key={i} className={styles.statusItem}>
+                                        <div className={styles.statusCheckDot} />
+                                        <span>{status}</span>
+                                    </div>
+                                ))}
                             </div>
-                            <div className={styles.statBox}>
-                                <span className={styles.statValue}>24/7</span>
-                                <span className={styles.statLabel}>Atención</span>
-                            </div>
-                            <div className={styles.statBox}>
-                                <span className={styles.statValue}>&infin;</span>
-                                <span className={styles.statLabel}>Pacientes</span>
+                        </div>
+
+                        <div className={styles.separator} />
+                        
+                        <div className={styles.agentCapabilities}>
+                            <h5 className={styles.capTitle}>Capacidades del agente</h5>
+                            
+                            <div className={styles.capList}>
+                                <div className={styles.capItem}>
+                                    <div className={styles.capIconWrapper}>
+                                        <Zap size={20} className={styles.capIcon} />
+                                    </div>
+                                    <div className={styles.capContent}>
+                                        <span className={styles.capLabel}>Respuesta instantánea</span>
+                                        <span className={styles.capValue}>&lt;5 segundos</span>
+                                    </div>
+                                </div>
+                                
+                                <div className={styles.capItem}>
+                                    <div className={styles.capIconWrapper}>
+                                        <Clock size={20} className={styles.capIcon} />
+                                    </div>
+                                    <div className={styles.capContent}>
+                                        <span className={styles.capLabel}>Atención continua</span>
+                                        <span className={styles.capValue}>Disponible 24/7</span>
+                                    </div>
+                                </div>
+                                
+                                <div className={styles.capItem}>
+                                    <div className={styles.capIconWrapper}>
+                                        <InfinityIcon size={20} className={styles.capIcon} />
+                                    </div>
+                                    <div className={styles.capContent}>
+                                        <span className={styles.capLabel}>Atención simultánea</span>
+                                        <span className={styles.capValue}>Múltiples pacientes</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
