@@ -2,41 +2,41 @@
 
 import { motion } from "framer-motion";
 import styles from "./HowItWorks.module.css";
-import { UserPlus, Bot, Calendar, HeartPulse } from "lucide-react";
+import { Settings, BrainCircuit, Bot, CalendarCheck } from "lucide-react";
 
 const steps = [
     {
-        icon: <UserPlus size={24} />,
-        title: "1. El paciente contacta",
-        description: "Un nuevo paciente o lead escribe por WhatsApp, Instagram, o tu sitio web buscando información."
+        icon: <Settings size={28} strokeWidth={1.5} />,
+        title: "Configuración de la clínica",
+        description: "Se cargan horarios, tratamientos y reglas de atención."
     },
     {
-        icon: <Bot size={24} />,
-        title: "2. Deviaty responde",
-        description: "En menos de 1 minuto, nuestra IA perfila sus intenciones, resuelve dudas y le ofrece horarios."
+        icon: <BrainCircuit size={28} strokeWidth={1.5} />,
+        title: "Entrenamiento del agente",
+        description: "El sistema aprende cómo responde la clínica a sus pacientes."
     },
     {
-        icon: <Calendar size={24} />,
-        title: "3. Cita confirmada",
-        description: "La IA agenda directamente en tu software actual y envía recordatorios antes de la visita."
+        icon: <Bot size={28} strokeWidth={1.5} />,
+        title: "Atención automática",
+        description: "El agente responde consultas y detecta intención de agendamiento."
     },
     {
-        icon: <HeartPulse size={24} />,
-        title: "4. Fidelización",
-        description: "A los 6 meses, la IA proactivamente contacta al paciente para su chequeo o limpieza regular."
+        icon: <CalendarCheck size={28} strokeWidth={1.5} />,
+        title: "Agenda y seguimiento",
+        description: "Las citas se registran y el sistema puede enviar recordatorios o contactar pacientes."
     }
 ];
 
 export default function HowItWorks() {
     return (
-        <section className="section-padding bg-gradient-soft" id="como-funciona">
-            <div className="container">
+        <section className={`section-padding ${styles.section}`} id="como-funciona">
+            <div className={`container ${styles.container}`}>
                 <div className={styles.header}>
                     <h2 className="heading-2">
-                        El flujo perfecto de <span className="text-gradient">adquisición y retención</span>
+                        Implementación simple. <span className={styles.titleGradient}>Resultados inmediatos.</span>
                     </h2>
-                    <p className="text-lead">
-                        Automatizamos todo el viaje del paciente, desde que pregunta hasta que regresa el próximo año.
+                    <p className={`text-lead ${styles.subtitle}`}>
+                        Conectamos el agente a tu clínica y comienza a atender pacientes automáticamente.
                     </p>
                 </div>
 
@@ -47,14 +47,14 @@ export default function HowItWorks() {
                             className={styles.step}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
                             <div className={styles.iconContainer}>
                                 {step.icon}
                             </div>
                             <div className={styles.content}>
-                                <h3 className="heading-3">{step.title}</h3>
+                                <h3 className={styles.stepTitle}>{step.title}</h3>
                                 <p className={styles.description}>{step.description}</p>
                             </div>
                             {/* Connector Line */}
