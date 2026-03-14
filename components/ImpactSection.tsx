@@ -51,13 +51,13 @@ function Counter({ value, duration = 2 }: { value: string; duration?: number }) 
 
 const metrics = [
     {
-        value: "100%",
+        value: "97%",
         title: "Captura de Pacientes",
         description: "AmalIA atrapa y agenda a todos los pacientes que escriben fuera de horario o en fines de semana.",
         icon: <UserCheck size={24} />
     },
     {
-        value: "-50.7%",
+        value: "-51%",
         title: "Inasistencias",
         description: "Caída radical en los 'no-shows' mediante predicción y reasignación dinámica de sillones vacíos.",
         icon: <CalendarDays size={24} />
