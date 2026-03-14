@@ -341,7 +341,13 @@
     pointer-events: none;
 }
 
-.section-padding {
+.sectionPadding {
+    padding: 5rem 0;
     position: relative;
     overflow: hidden;
+}
+@media (min-width: 768px) {
+    .sectionPadding {
+        padding: 8rem 0;
+    }
 }

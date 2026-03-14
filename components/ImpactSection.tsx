@@ -14,7 +14,7 @@ function Counter({ value, duration = 2 }: { value: string; duration?: number }) 
 
     // Extract number and suffix (e.g., "100" and "%", "-50.7" and "%")
     const numericPart = parseFloat(value.replace(/[^0-9.-]/g, ""));
-    const suffix = value.replace(/[0-9.-]/g, "");
+    const suffix = value.replace(/[0-9.+-]/g, "");
     const prefix = value.startsWith("-") ? "-" : value.startsWith("+") ? "+" : "";
     const absoluteValue = Math.abs(numericPart);
 
@@ -78,7 +78,7 @@ const metrics = [
 
 export default function ImpactSection() {
     return (
-        <section className="section-padding" id="impacto">
+        <section className={styles.impactSection} id="impacto">
             <div className="container">
                 <div className={styles.header}>
                     <h2 className="heading-2">

@@ -48,7 +48,8 @@
 }
 
 .section {
-    background-color: var(--color-background-alt); /* soft blue/gray background */
+    background-color: var(--color-background-alt);
+    /* soft blue/gray background */
     padding: 5rem 0;
 }
 
@@ -65,6 +66,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 }
 
 .glow {
@@ -85,10 +87,13 @@
     width: 100%;
     max-width: 450px;
     padding: 2.5rem;
-    background: #FFFFFF; /* Pure white */
+    background: #FFFFFF;
+    /* Pure white */
     border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0, 59, 115, 0.05); /* very soft blue-ish shadow */
-    border: 1px solid rgba(0, 0, 0, 0.05); /* sutil border */
+    box-shadow: 0 20px 50px rgba(0, 59, 115, 0.05);
+    /* very soft blue-ish shadow */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* sutil border */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -140,9 +145,11 @@
     display: block;
     width: 8px;
     height: 8px;
-    background: #10B981; /* Explicit green for "Online" */
+    background: #10B981;
+    /* Explicit green for "Online" */
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6), 0 0 16px rgba(16, 185, 129, 0.3); /* Glow effect */
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6), 0 0 16px rgba(16, 185, 129, 0.3);
+    /* Glow effect */
 }
 
 .agentStatusBlock {
@@ -216,9 +223,12 @@
     flex-shrink: 0;
     width: 48px;
     height: 48px;
-    border-radius: 50%; /* circular as requested */
-    background: rgba(0, 59, 115, 0.08); /* primary color with 8% opacity */
-    color: var(--color-primary); /* primary color for icon */
+    border-radius: 50%;
+    /* circular as requested */
+    background: rgba(0, 59, 115, 0.08);
+    /* primary color with 8% opacity */
+    color: var(--color-primary);
+    /* primary color for icon */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,6 +250,7 @@
 .capValue {
     font-size: 1.15rem;
     font-weight: 700;
-    color: var(--color-primary); /* primary color for values */
+    color: var(--color-primary);
+    /* primary color for values */
     line-height: 1.2;
 }
