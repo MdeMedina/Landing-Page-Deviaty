@@ -7,7 +7,7 @@ import { ArrowRight, Bot } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className={styles.hero} id="inicio">
+        <section className={`${styles.hero} ${styles.sectionPadding}`} id="inicio">
             <div className={`container ${styles.container}`}>
                 <motion.div
                     className={styles.content}

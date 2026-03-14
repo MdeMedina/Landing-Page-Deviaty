@@ -82,7 +82,7 @@ export default function ChatDemo() {
     };
 
     return (
-        <section className="section-padding" id="demo-interactiva">
+        <section className={styles.sectionPadding} id="demo-interactiva">
             <div className="container">
                 <div className={styles.wrapper}>
                     {/* Column Left: Content */}

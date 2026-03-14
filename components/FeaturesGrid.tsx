@@ -47,7 +47,7 @@ export default function FeaturesGrid() {
             <div className="container">
                 <div className={styles.header}>
                     <h2 className="heading-2">
-                        Todo lo que necesitas para <span className="text-gradient">crecer sin estrés</span>
+                        Cómo logramos hacerte crecer con <span className="text-gradient">soluciones diseñadas para tu clínica.</span>
                     </h2>
                     <p className="text-lead">
                         Funcionalidades diseñadas específicamente para el ecosistema de las clínicas dentales modernas.

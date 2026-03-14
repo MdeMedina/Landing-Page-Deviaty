@@ -32,7 +32,7 @@ export default function ProductExplanation() {
                                 <p className={styles.agentStatus}>En línea y atendiendo pacientes</p>
                             </div>
                         </div>
-                        
+
                         <div className={styles.agentStatusBlock}>
                             <h5 className={styles.statusTitle}>Estado del agente</h5>
                             <div className={styles.statusGrid}>
@@ -50,10 +50,10 @@ export default function ProductExplanation() {
                         </div>
 
                         <div className={styles.separator} />
-                        
+
                         <div className={styles.agentCapabilities}>
                             <h5 className={styles.capTitle}>Capacidades del agente</h5>
-                            
+
                             <div className={styles.capList}>
                                 <div className={styles.capItem}>
                                     <div className={styles.capIconWrapper}>
@@ -64,7 +64,7 @@ export default function ProductExplanation() {
                                         <span className={styles.capValue}>&lt;5 segundos</span>
                                     </div>
                                 </div>
-                                
+
                                 <div className={styles.capItem}>
                                     <div className={styles.capIconWrapper}>
                                         <Clock size={20} className={styles.capIcon} />
@@ -74,7 +74,7 @@ export default function ProductExplanation() {
                                         <span className={styles.capValue}>Disponible 24/7</span>
                                     </div>
                                 </div>
-                                
+
                                 <div className={styles.capItem}>
                                     <div className={styles.capIconWrapper}>
                                         <InfinityIcon size={20} className={styles.capIcon} />
@@ -103,7 +103,7 @@ export default function ProductExplanation() {
                         </h2>
                     </div>
                     <p className="text-lead" style={{ maxWidth: "600px", color: "var(--color-text-muted)" }}>
-                        Un agente de inteligencia artificial entrenado para responder pacientes, resolver dudas sobre tratamientos y ayudar a gestionar citas en clínicas dentales.
+                        Un agente de inteligencia artificial entrenado para responder a tus pacientes, resolver dudas sobre tratamientos y ayudar a gestionar citas en clínicas dentales.
                     </p>
 
                     <ul className={styles.list}>
