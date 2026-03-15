@@ -99,7 +99,7 @@ export default function ProductExplanation() {
                     <div>
                         <span className="eyebrow" style={{ display: "inline-block", marginBottom: "1rem", color: "var(--color-accent)", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>AGENTE IA PARA CLÍNICAS</span>
                         <h2 className="heading-2">
-                            Automatiza la <span className={styles.highlight}>atención de pacientes</span> en tu clínica
+                            Automatiza la <span className={styles.highlight}>atención de pacientes en tu clínica</span>
                         </h2>
                     </div>
                     <p className="text-lead" style={{ maxWidth: "600px", color: "var(--color-text-muted)" }}>

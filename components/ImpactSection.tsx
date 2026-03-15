@@ -53,7 +53,7 @@ const metrics = [
     {
         value: "97%",
         title: "Captura de Pacientes",
-        description: "AmalIA atrapa y agenda a todos los pacientes que escriben fuera de horario o en fines de semana.",
+        description: "Deviaty atrapa y agenda a todos los pacientes que escriben fuera de horario o en fines de semana.",
         icon: <UserCheck size={24} />
     },
     {
@@ -85,7 +85,7 @@ export default function ImpactSection() {
                         Deja de perder dinero por <span className="text-gradient">inasistencias o mala gestión</span>
                     </h2>
                     <p className="text-lead">
-                        AmalIA optimiza tu flujo de caja automatizando la captura de leads y el agendamiento inteligente 24/7.
+                        Deviaty optimiza tu flujo de caja automatizando la captura de leads y el agendamiento inteligente 24/7.
                     </p>
                 </div>
 

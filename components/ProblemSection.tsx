@@ -33,7 +33,7 @@ export default function ProblemSection() {
             <div className="container">
                 <div className={styles.header}>
                     <h2 className={`heading-2 ${styles.title}`}>
-                        Cinco minutos de demora, <span className={styles.highlight}>80% menos de pacientes.</span>
+                        Cada consulta sin respuesta, <span className={styles.highlight}>es un paciente que se pierde.</span>
                     </h2>
                     <p className={`text-lead ${styles.subtitle}`}>
                         La gestión manual dificulta responder consultas, dar seguimiento a pacientes y recuperar citas perdidas.

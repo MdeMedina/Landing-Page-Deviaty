@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 import { Linkedin, Twitter, Instagram, Mail, MapPin } from "lucide-react";
 
@@ -7,7 +10,30 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={`container ${styles.container}`}>
                 <div className={styles.brand}>
-                    <div className={styles.logo}>Deviaty</div>
+                    <Link href="/" className={styles.logoLink} aria-label="Volver al inicio">
+                        <div className={styles.logoContainer}>
+                            <Image
+                                src="/logo.png"
+                                alt="Deviaty Logo"
+                                width={140}
+                                height={40}
+                                className={styles.logoImage}
+                                onError={(e) => {
+                                    const target = e.target as HTMLElement;
+                                    target.style.display = 'none';
+                                    const parent = target.parentElement;
+                                    if (parent) {
+                                        const fallback = parent.querySelector(`.${styles.logoFallback}`);
+                                        if (fallback) (fallback as HTMLElement).style.display = 'block';
+                                    }
+                                }}
+                            />
+                            <div className={styles.logoFallback} style={{ display: 'none' }}>
+                                <span className={styles.logotextMain}>De</span>
+                                <span className={styles.logotextAccent}>Viaty</span>
+                            </div>
+                        </div>
+                    </Link>
                     <p className={styles.description}>
                         Agentes de Inteligencia Artificial especializados en automatizar y escalar clínicas dentales. Entregamos pacientes listos en tu sillón.
                     </p>
@@ -27,9 +53,11 @@ export default function Footer() {
                 <div className={styles.linksBlock}>
                     <h4 className={styles.heading}>Producto</h4>
                     <ul className={styles.list}>
-                        <li><Link href="#como-funciona">Cómo Funciona</Link></li>
-                        <li><Link href="#beneficios">Beneficios</Link></li>
-                        <li><Link href="#testimonios">Casos de Éxito</Link></li>
+                        <li><Link href="#beneficios">Funcionalidades</Link></li>
+                        <li><Link href="#como-funciona">Implementación</Link></li>
+                        <li><Link href="#impacto">Beneficios</Link></li>
+                        <li><Link href="#faq">FAQ</Link></li>
+                        <li><Link href="#demo">Demo</Link></li>
                     </ul>
                 </div>
 
@@ -45,7 +73,7 @@ export default function Footer() {
                 <div className={styles.linksBlock}>
                     <h4 className={styles.heading}>Contacto</h4>
                     <ul className={styles.list}>
-                        <li className={styles.contactItem}><Mail size={16} /> contacto@deviaty.com</li>
+                        <li className={styles.contactItem}><Mail size={16} /> deviaty.tech@gmail.com</li>
                         <li className={styles.contactItem}><MapPin size={16} /> Providencia, Santiago, Chile</li>
                         {/* Can remove location if it's worldwide but it adds trust */}
                     </ul>
