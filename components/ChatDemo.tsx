@@ -59,7 +59,7 @@ export default function ChatDemo() {
         socket.on("receiveMessage", (data: { sessionId: string; replyText: string; intent?: string }) => {
             setSessionId(data.sessionId);
             setIsTyping(false);
-            
+
             const aiResponse: Message = {
                 id: Date.now(),
                 text: data.replyText,
