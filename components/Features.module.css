@@ -1,3 +1,10 @@
+.section {
+    background-color: #F8FAFC; /* Fondo ligeramente gris/azulado para contrastar con las cards blancas */
+    background-image: radial-gradient(circle at 20% 0%, rgba(14, 165, 233, 0.05), transparent 40%);
+    position: relative;
+    overflow: hidden;
+}
+
 .header {
     text-align: center;
     max-width: 800px;
@@ -12,6 +19,8 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    position: relative;
+    perspective: 1000px; /* Helps with 3D transform smoothness */
 }
 
 @media (min-width: 768px) {
@@ -26,21 +35,37 @@
     }
 }
 
+/* Systemic Hover: Dim other cards when bounding grid is hovered */
+@media (hover: hover) {
+    .grid:hover .card {
+        opacity: 0.6;
+        transform: scale(0.98);
+        box-shadow: 0 4px 15px rgba(15, 76, 129, 0.04);
+    }
+}
+
 .card {
+    background: #F8FAFC; /* Tono aún más claro solicitado */
+    border-radius: 24px;
     padding: 2.5rem 2rem;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    box-shadow: 0 4px 15px rgba(15, 76, 129, 0.04);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+    z-index: 1;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg), var(--shadow-glow);
-    background: white;
-    border-color: rgba(0, 163, 196, 0.3);
+.grid .card:hover {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(15, 76, 129, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    background: #FFFFFF; /* Vuelve a blanco puro en hover para 'iluminarse' */
+    z-index: 10;
 }
 
 .cardHeader {
@@ -52,48 +77,62 @@
 .iconBox {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, rgba(0, 59, 115, 0.05) 0%, rgba(0, 163, 196, 0.1) 100%);
-    color: var(--color-primary);
-    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #002d59 0%, #004b8f 100%); /* Azul corporativo mucho más oscuro y sobrio */
+    color: #FFFFFF;
+    border-radius: 50%; /* Make them circular */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5rem;
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(14, 165, 233, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card:hover .iconBox {
-    background: var(--color-primary);
-    color: white;
-    box-shadow: 0 8px 16px rgba(0, 59, 115, 0.2);
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.4);
+    transform: scale(1.15) rotate(5deg) !important;
+}
+
+.grid h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .description {
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    font-size: 0.95rem;
+    color: #475569; /* Slate 600, darker than muted for readability */
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
 .statusBadge {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--color-accent-dark);
     background: rgba(0, 163, 196, 0.1);
-    padding: 0.3rem 0.6rem;
+    padding: 0.4rem 0.75rem;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover .statusBadge {
+    background: rgba(14, 165, 233, 0.15);
+    color: #0EA5E9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(14, 165, 233, 0.15);
 }
 
 .statusDot {
     width: 6px;
     height: 6px;
-    background: var(--color-accent);
+    background: currentColor; /* Matches the text color */
     border-radius: 50%;
-    box-shadow: 0 0 6px var(--color-accent);
+    box-shadow: 0 0 6px currentColor;
     animation: pulse 2s infinite;
 }
 
@@ -102,12 +141,10 @@
         opacity: 1;
         transform: scale(1);
     }
-
     50% {
         opacity: 0.5;
         transform: scale(1.2);
     }
-
     100% {
         opacity: 1;
         transform: scale(1);

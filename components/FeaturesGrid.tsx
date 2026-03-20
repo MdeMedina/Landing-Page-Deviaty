@@ -43,7 +43,7 @@ const features = [
 
 export default function FeaturesGrid() {
     return (
-        <section className="section-padding">
+        <section className={`section-padding ${styles.section}`}>
             <div className="container">
                 <div className={styles.header}>
                     <h2 className="heading-2">
@@ -58,7 +58,7 @@ export default function FeaturesGrid() {
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
-                            className={`glass-card ${styles.card}`}
+                            className={styles.card}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
@@ -67,7 +67,6 @@ export default function FeaturesGrid() {
                             <div className={styles.cardHeader}>
                                 <motion.div
                                     className={styles.iconBox}
-                                    whileHover={{ scale: 1.1, rotate: 5 }}
                                 >
                                     {feature.icon}
                                 </motion.div>

@@ -1,3 +1,17 @@
+.section {
+    background-color: #FFFFFF;
+    background-image: radial-gradient(circle at right, rgba(14, 165, 233, 0.08), transparent 40%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 8rem 0;
+    }
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -23,6 +37,254 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
+    filter: drop-shadow(0 10px 30px rgba(14, 165, 233, 0.15));
+    /* Leve glow solicitado */
+}
+
+/* Visual Assets */
+.visuals {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at center, rgba(0, 163, 196, 0.1) 0%, rgba(0, 163, 196, 0.04) 35%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.agentCard {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(59, 130, 246, 0.12));
+    /* Más contraste solicitado */
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 59, 115, 0.06);
+    border: 1px solid rgba(14, 165, 233, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.agentCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(15, 76, 129, 0.15);
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+.agentHeader {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0284C7 0%, #1E40AF 100%);
+    /* Azul más oscuro solicitado */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(2, 132, 199, 0.4);
+}
+
+.agentName {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+}
+
+.agentStatus {
+    color: #10B981;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.agentStatus::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #10B981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+    animation: pulseStatus 2s infinite;
+}
+
+@keyframes pulseStatus {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: 0.8;
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.agentStatusBlock {
+    margin-bottom: 2rem;
+}
+
+.statusTitle {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.statusGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.statusItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    background: rgba(16, 185, 129, 0.08);
+    /* Fondo verde suave solicitado */
+    color: #166534;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.statusItem:hover {
+    background: rgba(16, 185, 129, 0.15);
+    transform: translateY(-2px);
+}
+
+.statusCheckDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.agentCapabilities {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.capTitle {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+    opacity: 0.5;
+}
+
+.capList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.capItem {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.capIconWrapper {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(14, 165, 233, 0.08);
+    /* Estilo base solicitado */
+    color: #0EA5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.capItem:hover .capIconWrapper {
+    background: linear-gradient(135deg, #0EA5E9, #38BDF8);
+    color: #FFFFFF;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.capContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.capLabel {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    line-height: 1.2;
+}
+
+.capValue {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
 }
 
 .list {
@@ -36,221 +298,34 @@
 .listItem {
     display: flex;
     align-items: flex-start;
-    gap: 1.25rem;
-    font-size: 1.15rem;
+    gap: 1.5rem;
+    font-size: 1.3rem;
+    /* Tamaño aumentado solicitado */
     font-weight: 500;
     line-height: 1.4;
+    transition: all 0.25s ease;
+    /* Micro interacción solicitada */
+    cursor: default;
+}
+
+.listItem:hover {
+    transform: translateX(8px);
+    color: var(--color-primary);
 }
 
 .checkIcon {
     color: var(--color-accent);
     flex-shrink: 0;
+    transition: all 0.3s ease;
 }
 
-.section {
-    background-color: var(--color-background-alt);
-    /* soft blue/gray background */
-    padding: 5rem 0;
-}
-
-@media (min-width: 768px) {
-    .section {
-        padding: 8rem 0;
-    }
-}
-
-/* Visual Assets */
-.visuals {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-}
-
-.glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 140%;
-    height: 140%;
-    background: radial-gradient(circle at center, rgba(0, 163, 196, 0.15) 0%, rgba(0, 163, 196, 0.06) 35%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.agentCard {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 450px;
-    padding: 2.5rem;
-    background: #FFFFFF;
-    /* Pure white */
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0, 59, 115, 0.05);
-    /* very soft blue-ish shadow */
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    /* sutil border */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.agentCard:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 25px 60px rgba(0, 59, 115, 0.08);
-}
-
-.agentHeader {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.agentName {
-    font-size: 1.25rem;
-    font-weight: 700;
+.listItem:hover .checkIcon {
     color: var(--color-primary);
-    margin-bottom: 0.25rem;
+    transform: scale(1.1);
 }
 
-.agentStatus {
-    color: var(--color-accent);
-    font-weight: 500;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.agentStatus::before {
-    content: '';
-    display: block;
-    width: 8px;
-    height: 8px;
-    background: #10B981;
-    /* Explicit green for "Online" */
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6), 0 0 16px rgba(16, 185, 129, 0.3);
-    /* Glow effect */
-}
-
-.agentStatusBlock {
-    margin-bottom: 1.5rem;
-}
-
-.statusTitle {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-    opacity: 0.6;
-}
-
-.statusGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.statusItem {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    background: rgba(16, 185, 129, 0.05);
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-}
-
-.statusCheckDot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #10B981;
-}
-
-.agentCapabilities {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.capTitle {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1rem;
-    opacity: 0.7;
-}
-
-.capList {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-.capItem {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-}
-
-.capIconWrapper {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    /* circular as requested */
-    background: rgba(0, 59, 115, 0.08);
-    /* primary color with 8% opacity */
-    color: var(--color-primary);
-    /* primary color for icon */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.capContent {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-}
-
-.capLabel {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    line-height: 1.2;
-}
-
-.capValue {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    /* primary color for values */
-    line-height: 1.2;
+.separator {
+    height: 1px;
+    background: rgba(14, 165, 233, 0.1);
+    margin: 2rem 0;
 }

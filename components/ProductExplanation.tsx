@@ -17,10 +17,10 @@ export default function ProductExplanation() {
             <div className={`container ${styles.container}`}>
                 <motion.div
                     className={styles.visuals}
-                    initial={{ opacity: 0, x: -30 }}
+                    initial={{ opacity: 0, x: -40 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                 >
                     <div className={styles.glow} aria-hidden="true" />
                     {/* Abstract representation of the AI Agent working */}
@@ -91,10 +91,10 @@ export default function ProductExplanation() {
 
                 <motion.div
                     className={styles.content}
-                    initial={{ opacity: 0, x: 30 }}
+                    initial={{ opacity: 0, x: 40 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                 >
                     <div>
                         <span className="eyebrow" style={{ display: "inline-block", marginBottom: "1rem", color: "var(--color-accent)", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>AGENTE IA PARA CLÍNICAS</span>
@@ -109,7 +109,7 @@ export default function ProductExplanation() {
                     <ul className={styles.list}>
                         {benefits.map((benefit, index) => (
                             <li key={index} className={styles.listItem}>
-                                <CheckCircle2 className={styles.checkIcon} size={28} />
+                                <CheckCircle2 className={styles.checkIcon} size={32} />
                                 <span>{benefit}</span>
                             </li>
                         ))}
