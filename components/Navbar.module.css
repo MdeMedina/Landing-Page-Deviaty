@@ -4,10 +4,11 @@
     left: 0;
     width: 100%;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
+    transition: all 0.3s ease;
 }
 
 .navbar {
@@ -20,39 +21,99 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    flex: 1; /* Permite que el centro se mantenga alineado centralmente */
 }
 
-.logotext {
-    font-size: 1.5rem;
-    font-weight: 800;
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    object-fit: contain;
+    max-height: 40px;
+    width: auto;
+}
+
+.logoFallback {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+}
+
+.logotextMain {
     color: var(--color-primary);
-    letter-spacing: -0.02em;
+}
+
+.logotextAccent {
+    color: var(--color-primary);
+    /* En el logo real la 'V' es prominente, podemos ajustar si es necesario */
 }
 
 .nav {
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .nav {
         display: flex;
         gap: 2rem;
         align-items: center;
+        flex: 2;
+        justify-content: center;
     }
 }
 
 .navlink {
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--color-text-muted);
-    transition: color 0.2s;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navlink:hover {
     color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.socialLinks {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .socialLinks {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.socialIcon {
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socialIcon:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
 .cta {
     font-size: 0.95rem;
-    padding: 0.6rem 1.25rem;
+    padding: 0.6rem 1.5rem;
+    white-space: nowrap;
 }

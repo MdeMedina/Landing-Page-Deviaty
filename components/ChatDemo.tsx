@@ -22,7 +22,7 @@ const QUICK_ACTIONS = [
 const INITIAL_MESSAGES: Message[] = [
     {
         id: 1,
-        text: "¡Hola! Soy AmalIA, tu asistente dental inteligente. ¿En qué puedo ayudarte hoy?",
+        text: "¡Hola! Soy Deviaty, tu asistente dental inteligente. ¿En qué puedo ayudarte hoy?",
         sender: "ai",
         time: "10:00 AM"
     }
@@ -127,7 +127,7 @@ export default function ChatDemo() {
                                 Experimenta el futuro con <span className="text-gradient">nuestro Chat de Prueba</span>
                             </h2>
                             <p className="text-lead">
-                                AmalIA no es un chatbot básico. Entiende el contexto médico, agenda citas y resuelve dudas complejas al instante. Pruébalo tú mismo.
+                                Deviaty no es un chatbot básico. Entiende el contexto médico, agenda citas y resuelve dudas complejas al instante. Pruébalo tú mismo.
                             </p>
 
                             <div className={styles.quickActions}>
@@ -161,7 +161,7 @@ export default function ChatDemo() {
                             <div className={styles.phoneHeader}>
                                 <div className={styles.avatar}>A</div>
                                 <div className={styles.statusInfo}>
-                                    <strong>AmalIA</strong>
+                                    <strong>Deviaty</strong>
                                     <span className={styles.onlineStatus}>
                                         <span className={styles.dot} /> En línea
                                     </span>

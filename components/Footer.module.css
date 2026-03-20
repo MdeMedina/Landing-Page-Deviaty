@@ -29,11 +29,37 @@
     gap: 1.5rem;
 }
 
-.logo {
+.logoLink {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    object-fit: contain;
+    max-height: 40px;
+    width: auto;
+}
+
+.logoFallback {
     font-size: 1.75rem;
-    font-weight: 800;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+}
+
+.logotextMain {
     color: var(--color-primary);
-    letter-spacing: -0.02em;
+}
+
+.logotextAccent {
+    color: var(--color-primary);
 }
 
 .description {
