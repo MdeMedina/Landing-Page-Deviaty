@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import styles from "./ChatDemo.module.css";
 import { Send, User, ChevronRight, MessageSquareCheck } from "lucide-react";
+import { io, Socket } from "socket.io-client";
 
 interface Message {
-    id: number;
+    id: string | number;
     text: string;
     sender: "user" | "ai";
     time: string;
@@ -27,11 +28,15 @@ const INITIAL_MESSAGES: Message[] = [
     }
 ];
 
+const SOCKET_SERVER_URL = process.env.NEXT_PUBLIC_SOCKET_SERVER_URL || "http://localhost:3001";
+
 export default function ChatDemo() {
     const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
     const [inputValue, setInputValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
+    const [sessionId, setSessionId] = useState<string | null>(null);
     const chatBodyRef = useRef<HTMLDivElement>(null);
+    const socketRef = useRef<Socket | null>(null);
 
     const scrollToBottom = () => {
         if (chatBodyRef.current) {
@@ -41,6 +46,42 @@ export default function ChatDemo() {
             });
         }
     };
+
+    useEffect(() => {
+        // Initialize Socket.io connection
+        const socket = io(SOCKET_SERVER_URL);
+        socketRef.current = socket;
+
+        socket.on("connect", () => {
+            console.log("Connected to Chat Backend");
+        });
+
+        socket.on("receiveMessage", (data: { sessionId: string; replyText: string; intent?: string }) => {
+            setSessionId(data.sessionId);
+            setIsTyping(false);
+            
+            const aiResponse: Message = {
+                id: Date.now(),
+                text: data.replyText,
+                sender: "ai",
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages(prev => [...prev, aiResponse]);
+        });
+
+        socket.on("error", (err: { message: string }) => {
+            console.error("Socket error:", err.message);
+            setIsTyping(false);
+        });
+
+        socket.on("disconnect", () => {
+            console.log("Disconnected from Chat Backend");
+        });
+
+        return () => {
+            socket.disconnect();
+        };
+    }, []);
 
     useEffect(() => {
         scrollToBottom();
@@ -60,25 +101,14 @@ export default function ChatDemo() {
         setInputValue("");
         setIsTyping(true);
 
-        // Simulated AI response
-        setTimeout(() => {
-            const aiResponse: Message = {
-                id: Date.now() + 1,
-                text: getAIResponse(text),
-                sender: "ai",
-                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-            };
-            setMessages(prev => [...prev, aiResponse]);
-            setIsTyping(false);
-        }, 1500);
-    };
-
-    const getAIResponse = (input: string): string => {
-        const lowInput = input.toLowerCase();
-        if (lowInput.includes("limpieza")) return "¡Claro! Tengo disponibilidad para una limpieza dental este jueves a las 15:00 o el viernes a las 10:00. ¿Cuál te queda mejor?";
-        if (lowInput.includes("cancelar")) return "Entiendo. He localizado tu cita para mañana a las 11:00. ¿Deseas cancelarla o prefieres reasociarla para la próxima semana?";
-        if (lowInput.includes("ortodoncia")) return "La ortodoncia es una excelente inversión. Para darte un presupuesto exacto necesitamos una evaluación. ¿Te gustaría agendar una cita de valoración gratuita?";
-        return "Entiendo perfectamente. Déjame consultar la agenda de la clínica para darte la mejor opción. ¿Te gustaría dejar tu número para que un especialista te contacte?";
+        // Send message via Socket.io
+        if (socketRef.current) {
+            socketRef.current.emit("sendMessage", {
+                message: text,
+                userId: "demo-user",
+                sessionId: sessionId
+            });
+        }
     };
 
     return (
