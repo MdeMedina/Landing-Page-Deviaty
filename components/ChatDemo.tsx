@@ -159,7 +159,7 @@ export default function ChatDemo() {
                         >
                             {/* Phone Header */}
                             <div className={styles.phoneHeader}>
-                                <div className={styles.avatar}>A</div>
+                                <div className={styles.avatar}>D</div>
                                 <div className={styles.statusInfo}>
                                     <strong>Deviaty</strong>
                                     <span className={styles.onlineStatus}>

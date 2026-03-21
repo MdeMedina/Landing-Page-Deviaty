@@ -29,8 +29,8 @@ const problems = [
 
 export default function ProblemSection() {
     return (
-        <section className="section-padding" id="problema">
-            <div className="container">
+        <section className={`section-padding ${styles.section}`} id="problema">
+            <div className={`container ${styles.container}`}>
                 <div className={styles.header}>
                     <h2 className={`heading-2 ${styles.title}`}>
                         Cada consulta sin respuesta, <span className={styles.highlight}>es un paciente que se pierde.</span>
@@ -44,7 +44,7 @@ export default function ProblemSection() {
                     {problems.map((prob, index) => (
                         <motion.div
                             key={index}
-                            className={styles.listItem}
+                            className={styles.card}
                             initial={{ opacity: 0, y: 15 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}

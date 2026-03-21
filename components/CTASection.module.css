@@ -1,66 +1,104 @@
 .ctaSection {
-    background: var(--color-primary);
-    color: white;
+    background: linear-gradient(180deg, #EDF5FC 0%, #D8EAF7 100%);
     position: relative;
     overflow: hidden;
+    padding: 7rem 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* Add a subtle background glow */
-.ctaSection::before {
-    content: '';
+/* El glow suave dertrás de la tarjeta, separado del pseudo-elemento de la sección que ya no usaremos */
+.glowBackground {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
+    width: 60vw;
     height: 600px;
-    background: radial-gradient(circle, rgba(0, 163, 196, 0.4) 0%, rgba(0, 163, 196, 0) 70%);
-    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 163, 196, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(40px);
     pointer-events: none;
+    z-index: 0;
 }
 
-.content {
+.card {
+    background: linear-gradient(145deg, #0e1a2f 0%, #17365d 50%, #1e4b7a 100%); /* Richer dark blue gradient with depth */
+    border-radius: 40px;
+    padding: 6rem 4rem;
+    box-shadow: 0 40px 80px rgba(0, 46, 80, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.15); /* Elegant shadow + strong inset border highlight */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2rem;
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
-.iconWrapper {
+.badge {
     background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-accent);
-    box-shadow: 0 0 20px rgba(0, 163, 196, 0.4);
+    color: #a8d5f2; /* Light blue tech text */
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: -0.5rem;
+}
+
+.title {
+    color: #FFFFFF;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
 }
 
 .leadText {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.85);
-    line-height: 1.7;
-    max-width: 600px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.actionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .ctaButton {
-    background: var(--color-accent);
-    color: white;
-    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, #e6f4fe 0%, #cce7fc 100%); /* Celeste/azul claro gradient */
+    color: #0d2847; /* Dark text for contrast */
+    padding: 1.25rem 3.5rem;
     font-size: 1.15rem;
-    margin-top: 1rem;
+    font-weight: 700;
     border-radius: var(--radius-full);
-    box-shadow: 0 10px 25px rgba(0, 163, 196, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), inset 0 -2px 0 rgba(0,0,0,0.05); /* Premium shadow */
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .ctaButton:hover {
-    background: var(--color-accent-light);
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 163, 196, 0.6);
+    transform: translateY(-4px) scale(1.02); /* Slight scale */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), inset 0 -2px 0 rgba(0,0,0,0.02);
+    background: #ffffff; /* Brighten completely on hover */
+}
+
+.trustLine {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.3px;
 }
