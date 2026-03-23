@@ -8,9 +8,18 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Deviaty - IA para Clínicas Dentales",
-  description: "Deviaty provee agentes de IA diseñados para convertir leads y recuperar pacientes para clínicas dentales. Incrementa tus citas y optimiza tu agenda hoy.",
-};
+  title: 'Deviaty | Optimización de Procesos con IA y Software',
+  description: 'Ayudamos a empresas a ser más eficientes mediante herramientas de inteligencia artificial y desarrollo de software a medida.',
+  keywords: ['IA', 'Optimización de procesos', 'Software a medida', 'Deviaty'],
+  openGraph: {
+    title: 'Deviaty | Eficiencia con IA',
+    description: 'Transforma tu empresa con soluciones de software inteligente.',
+    url: 'https://deviaty.com',
+    siteName: 'Deviaty',
+    locale: 'es_ES',
+    type: 'website',
+  },
+}
 
 export default function RootLayout({
   children,
