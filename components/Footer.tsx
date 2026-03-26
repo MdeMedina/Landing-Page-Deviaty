@@ -38,7 +38,7 @@ export default function Footer() {
                         Agentes de Inteligencia Artificial especializados en automatizar y escalar clínicas dentales. Entregamos pacientes listos en tu sillón.
                     </p>
                     <div className={styles.social}>
-                        <Link href="#" aria-label="Instagram">
+                        <Link href="https://www.instagram.com/deviaty_ai/" aria-label="Instagram">
                             <Instagram size={20} />
                         </Link>
                         <Link href="#" aria-label="LinkedIn">
