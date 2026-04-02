@@ -8,16 +8,37 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'Deviaty | Optimización de Procesos con IA y Software',
-  description: 'Ayudamos a empresas a ser más eficientes mediante herramientas de inteligencia artificial y desarrollo de software a medida.',
-  keywords: ['IA', 'Optimización de procesos', 'Software a medida', 'Deviaty'],
+  metadataBase: new URL('https://deviaty.com'),
+  title: 'Deviaty | IA para Clínicas Dentales',
+  description: 'Automatiza la atención de tu clínica dental con IA. Responde pacientes, agenda citas y reduce carga operativa 24/7. Más pacientes, menos trabajo manual.',
+  keywords: ['IA para clínicas dentales', 'Automatización dental', 'Software dental IA', 'Deviaty', 'Agenda dental inteligente'],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: 'Deviaty | Eficiencia con IA',
-    description: 'Transforma tu empresa con soluciones de software inteligente.',
+    title: 'Deviaty | IA para Clínicas Dentales',
+    description: 'Automatiza la atención de tu clínica dental con IA y reduce tu carga operativa.',
     url: 'https://deviaty.com',
     siteName: 'Deviaty',
     locale: 'es_ES',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Deviaty | IA para Clínicas Dentales',
+    description: 'Automatiza la atención de tu clínica dental con IA. 24/7 y sin esperas.',
+    // images: ['/og-image.png'], // Add this if you have an OG image
   },
 }
 
