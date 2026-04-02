@@ -2,7 +2,7 @@
 export default function sitemap() {
     return [
         {
-            url: 'https://deviaty.com',
+            url: 'https://www.deviaty.com',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 1,

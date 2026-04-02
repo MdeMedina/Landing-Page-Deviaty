@@ -8,7 +8,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://deviaty.com'),
+  metadataBase: new URL('https://www.deviaty.com'),
   title: 'Deviaty | IA para Clínicas Dentales',
   description: 'Automatiza la atención de tu clínica dental con IA. Responde pacientes, agenda citas y reduce carga operativa 24/7. Más pacientes, menos trabajo manual.',
   keywords: ['IA para clínicas dentales', 'Automatización dental', 'Software dental IA', 'Deviaty', 'Agenda dental inteligente'],
