@@ -1,54 +1,75 @@
-Deviaty - Landing Page Corporativa
-Optimización de Procesos mediante Inteligencia Artificial y Software
-Este repositorio contiene el frontend profesional de Deviaty, una plataforma diseñada para presentar soluciones tecnológicas que eficientizan procesos empresariales a través de IA avanzada y software a medida. El proyecto destaca por su alto rendimiento, diseño centrado en el usuario (UX) y una arquitectura escalable basada en componentes.
+# Deviaty - Landing Page Corporativa
 
-🚀 Retos de Ingeniería y Soluciones
-En el desarrollo de esta interfaz, se aplicaron principios de Ingeniería de Software y Bases de Innovación para transformar requisitos de negocio en una experiencia técnica superior:
+### **Optimización de Procesos mediante Inteligencia Artificial y Software**
 
-Rendimiento y Web Vitals: Implementación de Next.js para maximizar los tiempos de carga mediante el renderizado del lado del servidor (SSR) y la optimización estática (SSG).
+Este repositorio contiene el frontend profesional de **Deviaty**, una plataforma diseñada para presentar soluciones tecnológicas que eficientizan procesos empresariales a través de IA avanzada y software a medida. El proyecto destaca por su alto rendimiento, diseño centrado en el usuario (UX) y una arquitectura escalable basada en componentes.
 
-SEO y Accesibilidad: Estructura semántica avanzada y optimización de metadatos dinámicos para garantizar un posicionamiento orgánico efectivo.
+---
 
-Diseño Atómico y Modular: Organización de componentes reutilizables (Hero, Features, ChatDemo, Impact) que facilitan el mantenimiento y la escalabilidad del sitio.
+## 🚀 Retos de Ingeniería y Soluciones
 
-Interactividad Fluida: Uso de animaciones optimizadas para mejorar el engagement del usuario sin penalizar el rendimiento del navegador.
+En el desarrollo de esta interfaz, se aplicaron principios de **Ingeniería de Software** y **Bases de Innovación** para transformar requisitos de negocio en una experiencia técnica superior:
 
-🛠️ Stack Tecnológico
-Framework: Next.js (App Router) con TypeScript para un desarrollo robusto y con tipado fuerte.
+* **Rendimiento y Web Vitals:** Implementación de **Next.js** para maximizar los tiempos de carga mediante el renderizado del lado del servidor (SSR) y la optimización estática (SSG).
+* **SEO y Accesibilidad:** Estructura semántica avanzada y optimización de metadatos dinámicos para garantizar un posicionamiento orgánico efectivo.
+* **Diseño Atómico y Modular:** Organización de componentes reutilizables (Hero, Features, ChatDemo, Impact) que facilitan el mantenimiento y la escalabilidad del sitio.
+* **Interactividad Fluida:** Uso de animaciones optimizadas para mejorar el *engagement* del usuario sin penalizar el rendimiento del navegador.
 
-Estilos: Tailwind CSS para un diseño responsivo y moderno basado en utilidades.
+---
 
-Componentes: Arquitectura modular con componentes especializados para demostraciones de IA (ChatDemo) y visualización de impacto.
+## 🛠️ Stack Tecnológico
 
-Despliegue: Configuración de CI/CD en Vercel para lanzamientos automatizados y alta disponibilidad.
+* **Framework:** Next.js (App Router) con TypeScript para un desarrollo robusto y con tipado fuerte.
+* **Estilos:** Tailwind CSS para un diseño responsivo y moderno basado en utilidades.
+* **Componentes:** Arquitectura modular con componentes especializados para demostraciones de IA (ChatDemo) y visualización de impacto.
+* **Despliegue:** Configuración de CI/CD en **Vercel** para lanzamientos automatizados y alta disponibilidad.
 
-📦 Características Principales
-Chat Demo Interactivo: Simulación visual de agentes de IA para mostrar la capacidad técnica de la empresa.
+---
 
-Grid de Funcionalidades: Sección dinámica que detalla los servicios de optimización y automatización.
+## 📦 Características Principales
 
-Optimización de Recursos: Uso de next/font y next/image para reducir el peso de los activos y mejorar la experiencia en dispositivos móviles.
+* **Chat Demo Interactivo:** Simulación visual de agentes de IA para mostrar la capacidad técnica de la empresa.
+* **Grid de Funcionalidades:** Sección dinámica que detalla los servicios de optimización y automatización.
+* **Optimización de Recursos:** Uso de `next/font` y `next/image` para reducir el peso de los activos y mejorar la experiencia en dispositivos móviles.
+* **Sección de Impacto:** Visualización de métricas y casos de éxito para validar la propuesta de valor de Deviaty.
 
-Sección de Impacto: Visualización de métricas y casos de éxito para validar la propuesta de valor de Deviaty.
+---
 
-⚙️ Configuración y Despliegue
-Requisitos Previos
-Node.js 18+
+## ⚙️ Configuración y Despliegue
 
-npm / pnpm / yarn
+### Requisitos Previos
+* Node.js 18+
+* npm / pnpm / yarn
 
-Instalación
-Clonar el repositorio:
+### Instalación
 
-Bash
-git clone https://github.com/mdemedina/landing-page-deviaty.git
-Instalar dependencias:
+1. Clonar el repositorio:
+```bash
+git clone [https://github.com/mdemedina/landing-page-deviaty.git](https://github.com/mdemedina/landing-page-deviaty.git)
+```
 
-Bash
+2. Instalar dependencias:
+```bash
 npm install
-Ejecutar en entorno de desarrollo:
+```
 
-Bash
+3. Ejecutar en entorno de desarrollo:
+```bash
 npm run dev
-Despliegue en Vercel
-El proyecto está configurado para despliegue automático. Cada push a la rama main activa un build de producción en Vercel, garantizando que la versión en vivo siempre esté actualizada con las últimas mejoras de ingeniería.
+```
+
+### Despliegue en Vercel
+El proyecto está configurado para despliegue automático. Cada *push* a la rama `main` activa un *build* de producción en Vercel, garantizando que la versión en vivo siempre esté actualizada con las últimas mejoras de ingeniería.
+
+---
+
+## 🛠️ Estructura del Proyecto
+
+```text
+landing-page-deviaty/
+├── app/                # Rutas y layouts principales (App Router)
+├── components/         # Componentes de UI modulares (Hero, Features, etc.)
+├── public/             # Activos estáticos (Logos, vectores)
+├── tailwind.config.ts  # Configuración de diseño y temas
+└── next.config.ts      # Configuraciones avanzadas del framework
+```
